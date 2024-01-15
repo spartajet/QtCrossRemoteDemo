@@ -6,7 +6,12 @@ set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 set(CMAKE_AUTOUIC ON)
 
-set(CMAKE_PREFIX_PATH  "/opt/atk-dlrk356x-toolchain/aarch64-buildroot-linux-gnu/sysroot/usr/lib/cmake/")
+if (WIN32)
+    set(CMAKE_PREFIX_PATH "C:\\Qt\\5.15.2\\mingw81_64")
+else ()
+    set(CMAKE_PREFIX_PATH  "/opt/atk-dlrk356x-toolchain/aarch64-buildroot-linux-gnu/sysroot/usr/lib/cmake/")
+
+endif ()
 
 find_package(Qt5 COMPONENTS
         Core
