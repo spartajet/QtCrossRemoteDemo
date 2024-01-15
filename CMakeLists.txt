@@ -21,7 +21,13 @@ find_package(Qt5 COMPONENTS
         PATHS "/opt/atk-dlrk356x-toolchain/aarch64-buildroot-linux-gnu/sysroot/usr/lib/"
 )
 
-add_executable(QtRemote main.cpp)
+add_executable(QtRemote main.cpp
+        MainWindow.cpp
+        MainWindow.h
+        mianwindow.ui
+        widgets/ledtestwidget.cpp
+        widgets/ledtestwidget.h
+        widgets/ledtestwidget.ui)
 target_link_libraries(QtRemote
         Qt5::Core
         Qt5::Gui

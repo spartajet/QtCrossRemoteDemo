@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MianWindow</class>
+ <widget class="QMainWindow" name="MianWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>573</width>
+    <height>336</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>RK3568 Tester</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QHBoxLayout" name="horizontalLayout_2">
+    <item>
+     <widget class="QListWidget" name="listWidget">
+      <property name="maximumSize">
+       <size>
+        <width>100</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <item>
+       <property name="text">
+        <string>LED</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Key</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Camera</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>PWM</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Modbus</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>RS232</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>CAN</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>TCP</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Mic</string>
+       </property>
+      </item>
+     </widget>
+    </item>
+    <item>
+     <widget class="QWidget" name="widget" native="true"/>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>573</width>
+     <height>17</height>
+    </rect>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>listWidget</sender>
+   <signal>itemDoubleClicked(QListWidgetItem*)</signal>
+   <receiver>MianWindow</receiver>
+   <slot>onItemDoubleClick(QListWidgetItem*)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>66</x>
+     <y>191</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>571</x>
+     <y>225</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>onItemDoubleClick(QListWidgetItem*)</slot>
+ </slots>
+</ui>
