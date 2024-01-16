@@ -71,7 +71,50 @@
      </widget>
     </item>
     <item>
-     <widget class="QWidget" name="widget" native="true"/>
+     <widget class="QStackedWidget" name="stackedWidget">
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="ledPage">
+       <widget class="QPushButton" name="ledControlButton">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="geometry">
+         <rect>
+          <x>180</x>
+          <y>20</y>
+          <width>80</width>
+          <height>18</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>点亮</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="ledinitialButton">
+        <property name="geometry">
+         <rect>
+          <x>40</x>
+          <y>20</y>
+          <width>80</width>
+          <height>18</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>初始化</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="keyPage"/>
+      <widget class="QWidget" name="cameraPage"/>
+      <widget class="QWidget" name="pwmPage"/>
+      <widget class="QWidget" name="modbusPage"/>
+      <widget class="QWidget" name="rsPage"/>
+      <widget class="QWidget" name="canPage"/>
+      <widget class="QWidget" name="tcpPage"/>
+      <widget class="QWidget" name="micPage"/>
+     </widget>
     </item>
    </layout>
   </widget>
@@ -90,22 +133,57 @@
  <connections>
   <connection>
    <sender>listWidget</sender>
-   <signal>itemDoubleClicked(QListWidgetItem*)</signal>
+   <signal>clicked(QModelIndex)</signal>
    <receiver>MianWindow</receiver>
-   <slot>onItemDoubleClick(QListWidgetItem*)</slot>
+   <slot>onItemClick(QModelIndex)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>66</x>
-     <y>191</y>
+     <x>43</x>
+     <y>243</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>570</x>
+     <y>223</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ledinitialButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MianWindow</receiver>
+   <slot>onLedInitialButtonClick()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>190</x>
+     <y>53</y>
     </hint>
     <hint type="destinationlabel">
      <x>571</x>
-     <y>225</y>
+     <y>69</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ledControlButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MianWindow</receiver>
+   <slot>onLedControlButtonClick()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>339</x>
+     <y>50</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>569</x>
+     <y>113</y>
     </hint>
    </hints>
   </connection>
  </connections>
  <slots>
   <slot>onItemDoubleClick(QListWidgetItem*)</slot>
+  <slot>onItemClick(QModelIndex)</slot>
+  <slot>onLedInitialButtonClick()</slot>
+  <slot>onLedControlButtonClick()</slot>
  </slots>
 </ui>

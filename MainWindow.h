@@ -11,14 +11,19 @@
 
 
 QT_BEGIN_NAMESPACE
-namespace Ui { class MianWindow; }
+
+namespace Ui {
+    class MianWindow;
+}
+
 QT_END_NAMESPACE
 
 class MainWindow : public QMainWindow {
-Q_OBJECT
+    Q_OBJECT
 
 public:
     explicit MainWindow(QWidget *parent = nullptr);
+
     ~MainWindow() override;
 
 private:
@@ -26,7 +31,9 @@ private:
     QGridLayout contentGridLayout;
 
 private slots:
-    void onItemDoubleClick(QListWidgetItem* item);
+    void onItemClick(const QModelIndex &index);
+    void onLedInitialButtonClick();
+    void onLedControlButtonClick();
 };
 
 

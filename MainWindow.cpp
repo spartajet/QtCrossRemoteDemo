@@ -9,9 +9,16 @@
 #include "widgets/ledtestwidget.h"
 
 
+
+
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent), ui(new Ui::MianWindow) {
     ui->setupUi(this);
+#if __arm__
+    this->setWindowState(Qt::WindowFullScreen);
+#else
+    this->resize(800,400);
+#endif
 
 }
 
@@ -19,8 +26,15 @@ MainWindow::~MainWindow() {
     delete ui;
 }
 
-void MainWindow::onItemDoubleClick(QListWidgetItem *item) {
-    LedTestWidget *ledTestWidget=new LedTestWidget(this);
-    this->contentGridLayout.addWidget(ledTestWidget);
-    this->ui->widget->setLayout(&this->contentGridLayout);
+void MainWindow::onItemClick(const QModelIndex &index) {
+    this->ui->stackedWidget->setCurrentIndex(index.row());
 }
+
+void MainWindow::onLedInitialButtonClick() {
+
+}
+
+void MainWindow::onLedControlButtonClick() {
+
+}
+
